@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/books
+    username: postgres
+    password: postgres
+    platform: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL92Dialect
+    database: postgresql
+    show-sql: true
+    properties:
+      hibernate:
+        search:
+          default:
+            directory_provider: filesystem
+            indexBase: /Users/abderrazakbouadma/code/lucene/indexes
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+

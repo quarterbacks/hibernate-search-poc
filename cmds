@@ -1,0 +1,9 @@
+# runs postgres docker instance
+docker run --name search-api-postgres -e PGDATA=/Users/abderrazakbouadma/code/postgresql/data -e POSTGRES_PASSWORD=postgres -d postgres
+
+# runs psql
+docker run -it --rm --link search-api-postgres:postgres postgres psql -h postgres -U postgres
+
+# Create DB
+CREATE DATABASE books OWNER postgres;
+
