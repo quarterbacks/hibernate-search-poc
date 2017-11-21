@@ -12,7 +12,6 @@ public class SearchApiApplication {
         SpringApplication.run(SearchApiApplication.class, args);
     }
 
-
     @Bean
     CommandLineRunner runner() {
         return new BookCommandLineRunner();

@@ -37,7 +37,10 @@ public class SearchService {
                 .onFields("title", "description")
                 .matching(q)
                 .createQuery();
+
         FullTextQuery query = fullTextEntityManager.createFullTextQuery(luceneQuery, Book.class);
+
+        
 
         return query.getResultList();
     }
