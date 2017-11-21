@@ -27,4 +27,9 @@ public class Book {
     @NotNull
     private String description;
 
+    @IndexedEmbedded
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
+
 }

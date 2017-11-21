@@ -34,13 +34,13 @@ public class SearchService {
 
         QueryBuilder qb = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(Book.class).get();
         Query luceneQuery = qb.keyword()
-                .onFields("title", "description")
+                .onFields("title",
+                        "description",
+                        "author.name")
                 .matching(q)
                 .createQuery();
 
         FullTextQuery query = fullTextEntityManager.createFullTextQuery(luceneQuery, Book.class);
-
-        
 
         return query.getResultList();
     }

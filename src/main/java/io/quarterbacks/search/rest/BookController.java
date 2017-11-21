@@ -32,11 +32,13 @@ public class BookController {
         if (author == null) {
             Author newAuthor = new Author();
             newAuthor.setName(authorName);
+            newAuthor.setStyle("Tragedy");
             author = authorRepository.save(newAuthor);
         }
         Book book = new Book();
         book.setTitle(title);
         book.setDescription("please provide description");
+        book.setAuthor(author);
         book = bookRepository.save(book);
         return ResponseEntity.ok(book);
     }
